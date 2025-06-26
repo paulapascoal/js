@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease; 
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #3498db; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #2980b9; 
+            transform: translateY(-2px); 
+        }
+        button:active {
+            transform: translateY(0);    
+            }
+    </style>
+</head>
+<body>
+     <button id="mudarCorBotao">Mude a cor do FUNDO!!!</button>
+
+    <script>
+       
+        const mudarCorBotao = document.getElementById('mudarCorBotao');
+        
+        const corpoDaPagina = document.body;
+
+        
+        const cores = ['#f39c12', '#27ae60', '#8e44ad', '#e74c3c', '#3498db']; 
+        let indiceCorAtual = 0; 
+        mudarCorBotao.addEventListener('click', mudarCorDeFundo);
+
+        function mudarCorDeFundo() {
+            
+            corpoDaPagina.style.backgroundColor = cores[indiceCorAtual];
+
+            
+            indiceCorAtual++;
+
+            
+            if (indiceCorAtual >= cores.length) {
+                indiceCorAtual = 0;
+            }
+        }
+
+        
+        corpoDaPagina.style.backgroundColor = cores[indiceCorAtual];
+        indiceCorAtual++; 
+    </script>
+    
+</body>
+</html>
